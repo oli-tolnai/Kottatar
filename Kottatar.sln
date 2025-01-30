@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kottatar.Endpoint", "Kottatar.Endpoint\Kottatar.Endpoint.csproj", "{E8358A44-EB33-4C87-A731-1F02E091CCCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kottatar.Data", "Kottatar.Data\Kottatar.Data.csproj", "{EDFA4DFF-C834-4AC9-B1EC-EE429A97AAEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kottatar.Logic", "Kottatar.Logic\Kottatar.Logic.csproj", "{77ADC912-3103-47E5-893A-454C181B75B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kottatar.Entities", "Kottatar.Entities\Kottatar.Entities.csproj", "{D7525457-DCF1-4249-8542-627DE975EDC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8358A44-EB33-4C87-A731-1F02E091CCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8358A44-EB33-4C87-A731-1F02E091CCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8358A44-EB33-4C87-A731-1F02E091CCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8358A44-EB33-4C87-A731-1F02E091CCCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFA4DFF-C834-4AC9-B1EC-EE429A97AAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFA4DFF-C834-4AC9-B1EC-EE429A97AAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFA4DFF-C834-4AC9-B1EC-EE429A97AAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFA4DFF-C834-4AC9-B1EC-EE429A97AAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77ADC912-3103-47E5-893A-454C181B75B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77ADC912-3103-47E5-893A-454C181B75B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77ADC912-3103-47E5-893A-454C181B75B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77ADC912-3103-47E5-893A-454C181B75B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7525457-DCF1-4249-8542-627DE975EDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7525457-DCF1-4249-8542-627DE975EDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7525457-DCF1-4249-8542-627DE975EDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7525457-DCF1-4249-8542-627DE975EDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
