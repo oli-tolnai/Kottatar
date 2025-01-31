@@ -10,11 +10,11 @@ namespace Kottatar.Entities.Entity_Models
 {
     public class Music
     {
-        public Music(string title, string sheetMusic)
+        public Music(string title, string sheetMusicFile)
         {
             Id = Guid.NewGuid().ToString();
             Title = title;
-            this.sheetMusic = sheetMusic;
+            SheetMusicFile = sheetMusicFile;
         }
 
         [StringLength(50)]
@@ -26,7 +26,7 @@ namespace Kottatar.Entities.Entity_Models
         public string Title { get; set; }
 
         [StringLength(200)]
-        public string sheetMusicFile { get; set; }
+        public string SheetMusicFile { get; set; }
 
         [NotMapped]
         public virtual ICollection<Instrument>? Instruments { get; set; }
