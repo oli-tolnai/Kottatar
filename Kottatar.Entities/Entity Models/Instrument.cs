@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kottatar.Entities;
 
-namespace Kottatar.Entities.Entity_Models
+namespace Kottatar.Entities
 {
-    public class Instrument
+    public class Instrument : IIdEntity
     {
         public Instrument(string musicId, string type, string auidoFile)
         {
