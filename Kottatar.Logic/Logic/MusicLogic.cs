@@ -20,7 +20,7 @@ namespace Kottatar.Logic.Logic
             this.repo = repo;
         }
 
-        public void AddMusic(MusicCreateDto dto)
+        public void AddMusic(MusicCreateUpdateDto dto)
         {
             Music m = new Music(dto.Title, dto.SheetMusicFile);
             if (repo.GetAll().FirstOrDefault(m => m.Title == dto.Title) == null)
@@ -46,6 +46,14 @@ namespace Kottatar.Logic.Logic
         public void DeleteMusic(string id)
         {
             repo.DeleteById(id);
+        }
+
+        public void UpdateMusic(string id, MusicCreateUpdateDto dto)
+        {
+            Music oldm = repo.FindById(id);
+            oldm.Title = dto.Title;
+            oldm.SheetMusicFile = dto.SheetMusicFile;
+            repo.Update(oldm);
         }
     }
 }

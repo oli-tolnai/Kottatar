@@ -18,7 +18,7 @@ namespace Kottatar.Endpoint.Controllers
         }
 
         [HttpPost]
-        public void AddMusic(MusicCreateDto dto)
+        public void AddMusic(MusicCreateUpdateDto dto)
         {
             logic.AddMusic(dto);
         }
@@ -29,10 +29,16 @@ namespace Kottatar.Endpoint.Controllers
             return logic.GetAllMusic();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public void DeleteMusic(string id)
         {
             logic.DeleteMusic(id);
+        }
+
+        [HttpPut("{id}")]
+        public void UpdateMusic(string id, [FromBody] MusicCreateUpdateDto dto)
+        {
+            logic.UpdateMusic(id, dto);
         }
     }
 }

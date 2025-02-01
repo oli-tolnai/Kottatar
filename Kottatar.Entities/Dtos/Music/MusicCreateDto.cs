@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kottatar.Entities.Dtos.Music
 {
-    public class MusicCreateDto
+    public class MusicCreateUpdateDto
     {
         public string Title { get; set; } = "";
         public string SheetMusicFile { get; set; } = "";
