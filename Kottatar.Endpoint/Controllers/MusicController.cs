@@ -40,5 +40,11 @@ namespace Kottatar.Endpoint.Controllers
         {
             logic.UpdateMusic(id, dto);
         }
+
+        [HttpGet("{id}")]
+        public MusicViewDto GetMusic(string id)
+        {
+            return logic.GetMusic(id);
+        }
     }
 }

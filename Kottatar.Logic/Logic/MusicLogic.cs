@@ -55,5 +55,17 @@ namespace Kottatar.Logic.Logic
             oldm.SheetMusicFile = dto.SheetMusicFile;
             repo.Update(oldm);
         }
+
+        public MusicViewDto GetMusic(string id)
+        {
+            Music mModel = repo.FindById(id);
+            return new MusicViewDto()
+            {
+                Id = mModel.Id,
+                Title = mModel.Title,
+                SheetMusicFile = mModel.SheetMusicFile,
+                Instruments = mModel.Instruments
+            };
+        }
     }
 }

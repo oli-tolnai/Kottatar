@@ -8,7 +8,7 @@ namespace Kottatar.Entities.Dtos.Music
 {
     public class MusicShortViewDto
     {
-        public string Id { get; set; }
-        public string Title { get; set; }
+        public string Id { get; set; } = "";
+        public string Title { get; set; } = "";
     }
 }
