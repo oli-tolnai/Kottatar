@@ -32,5 +32,10 @@ namespace Kottatar.Logic.Logic
                 throw new System.Exception("Music with this title already exists");
             }
         }
+
+        public IEnumerable<Music> GetAllMusic()
+        {
+            return repo.GetAll();
+        }   
     }
 }

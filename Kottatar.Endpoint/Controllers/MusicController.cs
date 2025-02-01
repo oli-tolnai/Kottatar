@@ -1,4 +1,5 @@
 ﻿using Kottatar.Data;
+using Kottatar.Entities.Dtos.Music;
 using Kottatar.Entities.Entity_Models;
 using Kottatar.Logic.Logic;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,12 @@ namespace Kottatar.Endpoint.Controllers
         public void AddMusic(MusicCreateDto dto)
         {
             logic.AddMusic(dto);
+        }
+
+        [HttpGet]
+        public IEnumerable<Music> GetAllMusic()
+        {
+            return logic.GetAllMusic();
         }
     }
 }
