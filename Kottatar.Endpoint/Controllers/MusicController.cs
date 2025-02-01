@@ -28,5 +28,11 @@ namespace Kottatar.Endpoint.Controllers
         {
             return logic.GetAllMusic();
         }
+
+        [HttpDelete]
+        public void DeleteMusic(string id)
+        {
+            logic.DeleteMusic(id);
+        }
     }
 }

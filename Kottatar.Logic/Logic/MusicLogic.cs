@@ -42,5 +42,10 @@ namespace Kottatar.Logic.Logic
                     Title = x.Title
                 });
         }   
+
+        public void DeleteMusic(string id)
+        {
+            repo.DeleteById(id);
+        }
     }
 }
