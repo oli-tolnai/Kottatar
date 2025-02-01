@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Kottatar.Entities;
+using Kottatar.Entities.Helpers;
 
-namespace Kottatar.Entities
+namespace Kottatar.Entities.Entity_Models
 {
     public class Instrument : IIdEntity
     {

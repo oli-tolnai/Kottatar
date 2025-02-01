@@ -11,6 +11,8 @@ namespace Kottatar.Endpoint
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            
+            builder.Services.AddTransient(typeof(Repository<>));
 
             builder.Services.AddDbContext<KottatarContext>(options =>
             {

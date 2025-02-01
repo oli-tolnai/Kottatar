@@ -1,9 +1,17 @@
 ﻿using Kottatar.Data;
-using Kottatar.Entities;
+using Kottatar.Entities.Entity_Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kottatar.Endpoint.Controllers
 {
+
+    public class MusicCreateDto
+    {
+        public string Title { get; set; }
+        public string SheetMusicFile { get; set; }
+    }
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class MusicController : ControllerBase
@@ -16,9 +24,10 @@ namespace Kottatar.Endpoint.Controllers
         }
 
         [HttpPost]
-        public void AddMusic(Music music)
+        public void AddMusic(MusicCreateDto dto)
         {
-            repo.Create(music);
+            var m = new Music(dto.Title, dto.SheetMusicFile);
+            repo.Create(m);
         }
     }
 }
