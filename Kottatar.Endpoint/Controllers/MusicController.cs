@@ -24,7 +24,7 @@ namespace Kottatar.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Music> GetAllMusic()
+        public IEnumerable<MusicShortViewDto> GetAllMusic()
         {
             return logic.GetAllMusic();
         }

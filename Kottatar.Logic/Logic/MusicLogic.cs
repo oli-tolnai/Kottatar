@@ -33,9 +33,14 @@ namespace Kottatar.Logic.Logic
             }
         }
 
-        public IEnumerable<Music> GetAllMusic()
+        public IEnumerable<MusicShortViewDto> GetAllMusic()
         {
-            return repo.GetAll();
+            return repo.GetAll().Select(x => 
+                new MusicShortViewDto()
+                {
+                    Id = x.Id,
+                    Title = x.Title
+                });
         }   
     }
 }
