@@ -1,5 +1,6 @@
 
 using Kottatar.Data;
+using Kottatar.Logic.Logic;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kottatar.Endpoint
@@ -13,6 +14,7 @@ namespace Kottatar.Endpoint
             // Add services to the container.
             
             builder.Services.AddTransient(typeof(Repository<>));
+            builder.Services.AddTransient<MusicLogic>();
 
             builder.Services.AddDbContext<KottatarContext>(options =>
             {

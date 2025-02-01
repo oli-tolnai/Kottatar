@@ -23,7 +23,14 @@ namespace Kottatar.Logic.Logic
         public void AddMusic(MusicCreateDto dto)
         {
             Music m = new Music(dto.Title, dto.SheetMusicFile);
-            repo.Create(m);
+            if (repo.GetAll().FirstOrDefault(m => m.Title == dto.Title) == null)
+            {
+                repo.Create(m);
+            }
+            else
+            {
+                throw new System.Exception("Music with this title already exists");
+            }
         }
     }
 }
