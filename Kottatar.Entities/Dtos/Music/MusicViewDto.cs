@@ -1,4 +1,5 @@
-﻿using Kottatar.Entities.Entity_Models;
+﻿using Kottatar.Entities.Dtos.Instrument;
+using Kottatar.Entities.Entity_Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Kottatar.Entities.Dtos.Music
         public string Id { get; set; } = "";
         public string Title { get; set; } = "";
         public string SheetMusicFile { get; set; } = "";
-        public IEnumerable<Instrument> Instruments { get; set; }
+        public IEnumerable<InstrumentViewDto>? Instruments { get; set; }
 
         public int InstrumentCount => Instruments?.Count() ?? 0;
     }

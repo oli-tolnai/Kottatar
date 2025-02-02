@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Kottatar.Entities.Dtos.Instrument;
 using Kottatar.Entities.Dtos.Music;
 using Kottatar.Entities.Entity_Models;
 using System;
@@ -20,6 +21,8 @@ namespace Kottatar.Logic.Helpers
                 cfg.CreateMap<Music, MusicShortViewDto>();
                 cfg.CreateMap<Music, MusicViewDto>();
                 cfg.CreateMap<MusicCreateUpdateDto, Music>();
+                cfg.CreateMap<InstrumentCreateDto, Instrument>();
+                cfg.CreateMap<Instrument, InstrumentViewDto>();
 
             });
 

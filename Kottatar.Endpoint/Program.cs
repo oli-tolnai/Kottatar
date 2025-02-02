@@ -17,10 +17,12 @@ namespace Kottatar.Endpoint
             builder.Services.AddTransient(typeof(Repository<>));
             builder.Services.AddTransient<DtoProvider>();
             builder.Services.AddTransient<MusicLogic>();
+            builder.Services.AddTransient<InstrumentLogic>();
 
             builder.Services.AddDbContext<KottatarContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=KottatarDb;Trusted_Connection=True;TrustServerCertificate=True");
+                options.UseLazyLoadingProxies();
             });
 
             builder.Services.AddControllers();
