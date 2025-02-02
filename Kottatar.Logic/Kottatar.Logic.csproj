@@ -7,12 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Kottatar.Data\Kottatar.Data.csproj" />
     <ProjectReference Include="..\Kottatar.Entities\Kottatar.Entities.csproj" />
   </ItemGroup>
 
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+	</ItemGroup>
+	
 </Project>
