@@ -21,7 +21,7 @@ namespace Kottatar.Endpoint
 
             builder.Services.AddDbContext<KottatarContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=KottatarDb;Trusted_Connection=True;TrustServerCertificate=True");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=KottatarDb;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
                 options.UseLazyLoadingProxies();
             });
 
