@@ -61,5 +61,10 @@ namespace Kottatar.Logic.Logic
             Music mModel = repo.FindById(id);
             return dtoProvider.Mapper.Map<MusicViewDto>(mModel);
         }
+
+        public void UpdateDatabase(string path)
+        {
+            
+        }
     }
 }
