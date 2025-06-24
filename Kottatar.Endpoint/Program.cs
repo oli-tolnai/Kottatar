@@ -20,6 +20,18 @@ namespace Kottatar.Endpoint
             builder.Services.AddTransient<MusicLogic>();
             builder.Services.AddTransient<InstrumentLogic>();
 
+            // Add CORS support for Angular application
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularApp", policy =>
+                {
+                    policy.AllowAnyOrigin()      // Allow requests from any origin (can be restricted to specific origins later)
+                          .AllowAnyMethod()      // Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
+                          .AllowAnyHeader()      // Allow any headers in the request
+                          .WithExposedHeaders("Content-Disposition"); // Allows the Content-Disposition header to be accessible to clients
+                });
+            });
+
             builder.Services.AddDbContext<KottatarContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=KottatarDb;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
@@ -55,6 +67,9 @@ namespace Kottatar.Endpoint
             app.UseExceptionHandler("/error");
 
             app.UseHttpsRedirection();
+
+            // Use CORS policy - must be before routing/endpoints
+            app.UseCors("AllowAngularApp");
 
             app.UseAuthorization();
 
