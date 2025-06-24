@@ -33,7 +33,7 @@ namespace Kottatar.Logic.Logic
             }
             else
             {
-                throw new System.Exception("Music with this title already exists");
+                throw new ArgumentException("Music with this title already exists");
             }
         }
 

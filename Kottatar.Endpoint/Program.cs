@@ -1,7 +1,8 @@
-
 using Kottatar.Data;
+using Kottatar.Entities.Helpers;
 using Kottatar.Logic.Helpers;
 using Kottatar.Logic.Logic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kottatar.Endpoint
@@ -25,7 +26,18 @@ namespace Kottatar.Endpoint
                 options.UseLazyLoadingProxies();
             });
 
-            builder.Services.AddControllers();
+            builder.Services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
+            // Add global exception handling filters
+            builder.Services.AddControllers(options => 
+            {
+                options.Filters.Add<ExceptionFilter>();
+                options.Filters.Add<ValidationFilterAttribute>();
+            });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -39,10 +51,12 @@ namespace Kottatar.Endpoint
                 app.UseSwaggerUI();
             }
 
+            // Global exception handling middleware (optional, as we're already using filters)
+            app.UseExceptionHandler("/error");
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

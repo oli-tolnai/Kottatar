@@ -11,20 +11,25 @@ namespace Kottatar.Entities.Helpers
 {
     public class ValidationFilterAttribute : IActionFilter
     {
-        public void OnActionExecuted(ActionExecutedContext context)
+        public void OnActionExecuting(ActionExecutingContext context)
         {
             if (!context.ModelState.IsValid)
             {
-                var error = new ErrorModel
-                (
-                    String.Join(',',
-                    (context.ModelState.Values.SelectMany(t => t.Errors.Select(z => z.ErrorMessage))).ToArray())
+                var statusCode = StatusCodes.Status400BadRequest;
+                var path = context.HttpContext.Request.Path;
+                var error = new ErrorModel(
+                    String.Join(", ", context.ModelState.Values
+                        .SelectMany(t => t.Errors.Select(z => z.ErrorMessage))
+                        .ToArray()),
+                    statusCode,
+                    path
                 );
-                context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+                
+                context.HttpContext.Response.StatusCode = statusCode;
                 context.Result = new JsonResult(error);
             }
-
         }
-        public void OnActionExecuting(ActionExecutingContext context){ }
+        
+        public void OnActionExecuted(ActionExecutedContext context) { }
     }
 }
