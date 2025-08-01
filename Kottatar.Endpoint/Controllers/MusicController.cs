@@ -46,12 +46,5 @@ namespace Kottatar.Endpoint.Controllers
         {
             return logic.GetMusic(id);
         }
-
-        [HttpPost("updatedb")]
-        public void UpdateDatabase()
-        {
-            string path = @"C:\Kottatar\song_database";
-            logic.UpdateDatabase(path);
-        }
     }
 }
